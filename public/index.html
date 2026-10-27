@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToDo Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>ToDo Tasks</h1>
+    <p id="message" role="alert" hidden></p>
+
+    <section id="auth-section">
+      <form id="auth-form">
+        <label>Username <input id="username" autocomplete="username" required minlength="3" maxlength="30"></label>
+        <label>Password <input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label>
+        <div class="row">
+          <button type="submit" id="login-btn">Log in</button>
+          <button type="button" id="register-btn">Register</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="app-section" hidden>
+      <div class="row between">
+        <span>Signed in as <strong id="current-user"></strong></span>
+        <button type="button" id="logout-btn">Log out</button>
+      </div>
+
+      <form id="task-form">
+        <input id="task-id" type="hidden">
+        <label>Title <input id="task-title" required maxlength="100"></label>
+        <label>Description <textarea id="task-description" maxlength="1000" rows="3"></textarea></label>
+        <div class="row">
+          <button type="submit" id="task-submit">Add task</button>
+          <button type="button" id="task-cancel" hidden>Cancel edit</button>
+        </div>
+      </form>
+
+      <ul id="task-list"></ul>
+      <p id="empty" hidden>No tasks yet.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
